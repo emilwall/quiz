@@ -9,11 +9,11 @@
         throw new TypeError("element should be an object");
       }
 
-      var classes = element.class ? element.class.split(" ") : [];
+      var classes = element.className ? element.className.split(" ") : [];
       if (classes.indexOf("active") == -1) {
         classes.push("active");
       }
-      element.class = classes.join(" ");
+      element.className = classes.join(" ");
     };
   };
 

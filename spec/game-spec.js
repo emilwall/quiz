@@ -23,7 +23,7 @@ describe("Game", function() {
             return "Expected " + actual + notText + " to have class " + className;
           }
 
-          return re.exec(actual.class);
+          return re.exec(actual.className);
         }
       });
     });
@@ -41,7 +41,7 @@ describe("Game", function() {
     });
 
     it("should not overwrite classes in element passed as argument", function() {
-      var element = { class: "hidden" };
+      var element = { className: "hidden" };
 
       this.game.play(element);
 
@@ -49,11 +49,11 @@ describe("Game", function() {
     });
 
     it("should not add class if already present", function() {
-      var element = { class: "active" };
+      var element = { className: "active" };
 
       this.game.play(element);
 
-      expect(element.class).not.toBe("active active");
+      expect(element.className).toBe("active");
     });
   });
 });
