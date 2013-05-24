@@ -9,7 +9,9 @@
         throw new TypeError("element should be an object");
       }
 
-      element.class = "active";
+      var classes = element.class ? element.class.split(" ") : [];
+      classes.push("active");
+      element.class = classes.join(" ");
     };
   };
 

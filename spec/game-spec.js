@@ -39,5 +39,13 @@ describe("Game", function() {
 
       expect(element).toHaveClass("active");
     });
+
+    it("should not overwrite classes in element passed as argument", function() {
+      var element = { class: "hidden" };
+
+      this.game.play(element);
+
+      expect(element).toHaveClass("hidden");
+    });
   });
 });
