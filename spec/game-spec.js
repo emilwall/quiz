@@ -12,3 +12,12 @@ describe("Game", function() {
   });
 });
 
+describe("Game.play", function() {
+  beforeEach(function() {
+    this.game = new quiz.Game();
+  });
+
+  it("should require html element as argument", function() {
+    expect(this.game.play).toThrow(new TypeError("element should be an object"));
+  });
+});

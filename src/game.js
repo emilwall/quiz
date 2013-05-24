@@ -4,7 +4,11 @@
   }
 
   function Game() {
-    this.play = function () {};
+    this.play = function (element) {
+      if (typeof element !== "object") {
+        throw new TypeError("element should be an object");
+      }
+    };
   };
 
   quiz.Game = Game;
