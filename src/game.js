@@ -10,7 +10,9 @@
       }
 
       var classes = element.class ? element.class.split(" ") : [];
-      classes.push("active");
+      if (classes.indexOf("active") == -1) {
+        classes.push("active");
+      }
       element.class = classes.join(" ");
     };
   };

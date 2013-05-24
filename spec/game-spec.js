@@ -47,5 +47,13 @@ describe("Game", function() {
 
       expect(element).toHaveClass("hidden");
     });
+
+    it("should not add class if already present", function() {
+      var element = { class: "active" };
+
+      this.game.play(element);
+
+      expect(element.class).not.toBe("active active");
+    });
   });
 });
