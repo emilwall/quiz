@@ -15,5 +15,13 @@ describe("Game", function() {
     it("should require html element as argument", function() {
       expect(this.game.play).toThrow(new TypeError("element should be an object"));
     });
+
+    it("should add active class to element passed as argument", function() {
+      var element = {};
+
+      this.game.play(element);
+
+      expect(element.class).toMatch("active");
+    });
   });
 });

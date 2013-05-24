@@ -8,6 +8,8 @@
       if (typeof element !== "object") {
         throw new TypeError("element should be an object");
       }
+
+      element.class = "active";
     };
   };
 
