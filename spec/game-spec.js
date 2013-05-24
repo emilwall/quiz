@@ -12,6 +12,22 @@ describe("Game", function() {
   });
 
   describe("play", function() {
+    beforeEach(function() {
+      this.addMatchers({
+        toHaveClass: function(className) {
+          var re = new RegExp(className);
+          var actual = this.actual;
+          var notText = this.isNot ? " not" : "";
+
+          this.message = function () {
+            return "Expected " + actual + notText + " to have class " + className;
+          }
+
+          return re.exec(actual.class);
+        }
+      });
+    });
+
     it("should require html element as argument", function() {
       expect(this.game.play).toThrow(new TypeError("element should be an object"));
     });
@@ -21,7 +37,7 @@ describe("Game", function() {
 
       this.game.play(element);
 
-      expect(element.class).toMatch("active");
+      expect(element).toHaveClass("active");
     });
   });
 });
