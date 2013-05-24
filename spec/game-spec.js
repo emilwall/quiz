@@ -9,5 +9,11 @@ describe("Game", function() {
 
     expect(game.constructor).toBe(quiz.Game);
   });
+
+  it("should have play method", function() {
+    var game = new quiz.Game();
+
+    expect(typeof game.play).toBe("function");
+  });
 });
 

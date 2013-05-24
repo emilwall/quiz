@@ -3,7 +3,9 @@
     quiz = {};
   }
 
-  function Game() {};
+  function Game() {
+    this.play = function () {};
+  };
 
   quiz.Game = Game;
 }());
